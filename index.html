@@ -8,214 +8,201 @@
 </head>
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <span class="brand-icon">⛩</span>
-      <div class="brand-text">
-        <span class="brand-name">Calistenia</span>
-        <span class="brand-sub">Asiática</span>
-      </div>
+  <!-- ======================== TELA DE LOGIN ======================== -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-kanji">武</div>
+      <h1 class="login-title">Calistenia <span>Asiática</span></h1>
+      <p class="login-sub">Sua jornada começa com um clique 🌸</p>
+      <button class="btn-google" id="loginGoogleBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Entrar com Google
+      </button>
+      <p class="login-terms">Ao entrar, você concorda com nossos termos de uso.</p>
     </div>
+  </div>
 
-    <nav class="sidebar-nav">
-      <button class="nav-item active" data-tab="dashboard">
-        <span class="nav-icon">⊞</span>
-        <span class="nav-label">Dashboard</span>
-      </button>
-      <button class="nav-item" data-tab="peso">
-        <span class="nav-icon">⚖</span>
-        <span class="nav-label">Peso</span>
-      </button>
-      <button class="nav-item" data-tab="treino">
-        <span class="nav-icon">🥋</span>
-        <span class="nav-label">Treino do Dia</span>
-      </button>
-    </nav>
+  <!-- ======================== LOADING ======================== -->
+  <div class="loading-screen hidden" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <p>Carregando seus dados...</p>
+  </div>
 
-    <div class="sidebar-footer">
-      <div class="dojo-badge">
-        <span>道場</span>
-        <small>Seu Dojô Digital</small>
-      </div>
-    </div>
-  </aside>
+  <!-- ======================== APP ======================== -->
+  <div id="appContent" class="hidden">
 
-  <!-- OVERLAY MOBILE -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-  <!-- MAIN -->
-  <main class="main-content">
-
-    <!-- HEADER -->
-    <header class="top-header">
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="header-title" id="headerTitle">Dashboard</div>
-      <div class="header-date" id="headerDate"></div>
-    </header>
-
-    <!-- ======================== DASHBOARD ======================== -->
-    <section class="tab-content active" id="tab-dashboard">
-
-      <div class="welcome-banner">
-        <div class="welcome-text">
-          <h1>Bem-vinda, <span id="greetName">Guerreira</span> 🌸</h1>
-          <p>Pronta para mais um dia de evolução?</p>
-        </div>
-        <div class="welcome-kanji">武</div>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card card-pink">
-          <div class="stat-icon">⚖</div>
-          <div class="stat-info">
-            <span class="stat-label">Peso Atual</span>
-            <span class="stat-value" id="dashPeso">—</span>
-          </div>
-        </div>
-        <div class="stat-card card-dark">
-          <div class="stat-icon">🔥</div>
-          <div class="stat-info">
-            <span class="stat-label">Exercícios Concluídos</span>
-            <span class="stat-value" id="dashTreinos">0</span>
-          </div>
-        </div>
-        <div class="stat-card card-yellow">
-          <div class="stat-icon">📈</div>
-          <div class="stat-info">
-            <span class="stat-label">Registros de Peso</span>
-            <span class="stat-value" id="dashPesos">0</span>
-          </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-icon">⛩</span>
+        <div class="brand-text">
+          <span class="brand-name">Calistenia</span>
+          <span class="brand-sub">Asiática</span>
         </div>
       </div>
 
-      <div class="dashboard-bottom">
-        <div class="dash-section">
-          <h3 class="section-title"><span class="title-bar"></span> Exercício do Dia</h3>
-          <div class="exercise-of-day" id="exerciseOfDay">
-            <div class="eod-loading">Gere um treino na aba Treino do Dia!</div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-tab="dashboard">
+          <span class="nav-icon">⊞</span>
+          <span class="nav-label">Dashboard</span>
+        </button>
+        <button class="nav-item" data-tab="peso">
+          <span class="nav-icon">⚖</span>
+          <span class="nav-label">Peso</span>
+        </button>
+        <button class="nav-item" data-tab="treino">
+          <span class="nav-icon">🥋</span>
+          <span class="nav-label">Treino do Dia</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-info-name" id="userDisplayName">—</div>
+          <div class="user-info-email" id="userEmail">—</div>
+        </div>
+        <button class="btn-logout" id="logoutBtn">Sair</button>
+      </div>
+    </aside>
+
+    <!-- OVERLAY MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- HEADER -->
+      <header class="top-header">
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="header-title" id="headerTitle">Dashboard</div>
+        <div class="header-date" id="headerDate"></div>
+      </header>
+
+      <!-- DASHBOARD -->
+      <section class="tab-content active" id="tab-dashboard">
+        <div class="welcome-banner">
+          <div class="welcome-text">
+            <h1>Bem-vinda, <span id="greetName">Guerreira</span> 🌸</h1>
+            <p>Pronta para mais um dia de evolução?</p>
           </div>
+          <div class="welcome-kanji">武</div>
         </div>
 
-        <div class="dash-section">
-          <h3 class="section-title"><span class="title-bar"></span> Evolução do Peso</h3>
-          <div class="mini-chart-wrap">
-            <canvas id="miniChart" width="400" height="160"></canvas>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ======================== PESO ======================== -->
-    <section class="tab-content" id="tab-peso">
-
-      <div class="page-header">
-        <h2>⚖ Acompanhamento de Peso</h2>
-        <p>Monitore sua evolução física ao longo do tempo</p>
-      </div>
-
-      <div class="peso-top">
-        <div class="form-card compact">
-          <h3 class="form-title">Registrar Peso</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Data</label>
-              <input type="date" id="pesoData" />
-            </div>
-            <div class="form-group">
-              <label>Peso (kg)</label>
-              <input type="number" id="pesoValor" placeholder="Ex: 58.5" step="0.1" />
+        <div class="stats-grid">
+          <div class="stat-card card-pink">
+            <div class="stat-icon">⚖</div>
+            <div class="stat-info">
+              <span class="stat-label">Peso Atual</span>
+              <span class="stat-value" id="dashPeso">—</span>
             </div>
           </div>
-          <button class="btn-primary" id="addPesoBtn">Registrar Peso</button>
-        </div>
-
-        <div class="peso-summary-cards">
-          <div class="mini-stat">
-            <span class="mini-stat-label">Atual</span>
-            <span class="mini-stat-val" id="pesoAtual">—</span>
+          <div class="stat-card card-dark">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-info">
+              <span class="stat-label">Exercícios Concluídos</span>
+              <span class="stat-value" id="dashTreinos">0</span>
+            </div>
           </div>
-          <div class="mini-stat">
-            <span class="mini-stat-label">Mínimo</span>
-            <span class="mini-stat-val" id="pesoMin">—</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-stat-label">Máximo</span>
-            <span class="mini-stat-val" id="pesoMax">—</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-stat-label">Variação</span>
-            <span class="mini-stat-val" id="pesoVar">—</span>
+          <div class="stat-card card-yellow">
+            <div class="stat-icon">📈</div>
+            <div class="stat-info">
+              <span class="stat-label">Registros de Peso</span>
+              <span class="stat-value" id="dashPesos">0</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="chart-card">
-        <h3 class="section-title"><span class="title-bar"></span> Gráfico de Evolução</h3>
-        <div class="chart-wrap">
-          <canvas id="pesoChart" width="800" height="300"></canvas>
-        </div>
-      </div>
-
-      <div class="list-header">
-        <h3 class="section-title"><span class="title-bar"></span> Histórico</h3>
-        <span class="list-count" id="pesoCount">0 registros</span>
-      </div>
-
-      <div class="peso-list" id="pesoList">
-        <div class="empty-state">
-          <span>⚖</span>
-          <p>Nenhum registro de peso ainda</p>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ======================== TREINO ======================== -->
-    <section class="tab-content" id="tab-treino">
-
-      <div class="page-header">
-        <h2>🥋 Treino do Dia</h2>
-        <p>Exercícios selecionados especialmente para você</p>
-      </div>
-
-      <div class="treino-controls">
-        <button class="btn-primary" id="gerarTreinoBtn">⚡ Gerar Novo Treino</button>
-        <div class="progress-wrap">
-          <span class="progress-label">Progresso: <strong id="progressLabel">0/0</strong></span>
-          <div class="progress-track">
-            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        <div class="dashboard-bottom">
+          <div class="dash-section">
+            <h3 class="section-title"><span class="title-bar"></span> Exercício do Dia</h3>
+            <div class="exercise-of-day" id="exerciseOfDay">
+              <div class="eod-loading">Gere um treino na aba Treino do Dia!</div>
+            </div>
+          </div>
+          <div class="dash-section">
+            <h3 class="section-title"><span class="title-bar"></span> Evolução do Peso</h3>
+            <div class="mini-chart-wrap">
+              <canvas id="miniChart" width="400" height="160"></canvas>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="treino-grid" id="treinoGrid">
-        <div class="empty-state">
-          <span>💪</span>
-          <p>Clique em "Gerar Novo Treino" para começar!</p>
+      <!-- PESO -->
+      <section class="tab-content" id="tab-peso">
+        <div class="page-header">
+          <h2>⚖ Acompanhamento de Peso</h2>
+          <p>Monitore sua evolução física ao longo do tempo</p>
         </div>
-      </div>
+        <div class="peso-top">
+          <div class="form-card compact">
+            <h3 class="form-title">Registrar Peso</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Data</label>
+                <input type="date" id="pesoData" />
+              </div>
+              <div class="form-group">
+                <label>Peso (kg)</label>
+                <input type="number" id="pesoValor" placeholder="Ex: 58.5" step="0.1" />
+              </div>
+            </div>
+            <button class="btn-primary" id="addPesoBtn">Registrar Peso</button>
+          </div>
+          <div class="peso-summary-cards">
+            <div class="mini-stat"><span class="mini-stat-label">Atual</span><span class="mini-stat-val" id="pesoAtual">—</span></div>
+            <div class="mini-stat"><span class="mini-stat-label">Mínimo</span><span class="mini-stat-val" id="pesoMin">—</span></div>
+            <div class="mini-stat"><span class="mini-stat-label">Máximo</span><span class="mini-stat-val" id="pesoMax">—</span></div>
+            <div class="mini-stat"><span class="mini-stat-label">Variação</span><span class="mini-stat-val" id="pesoVar">—</span></div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="section-title"><span class="title-bar"></span> Gráfico de Evolução</h3>
+          <div class="chart-wrap"><canvas id="pesoChart" width="800" height="300"></canvas></div>
+        </div>
+        <div class="list-header">
+          <h3 class="section-title"><span class="title-bar"></span> Histórico</h3>
+          <span class="list-count" id="pesoCount">0 registros</span>
+        </div>
+        <div class="peso-list" id="pesoList">
+          <div class="empty-state"><span>⚖</span><p>Nenhum registro de peso ainda</p></div>
+        </div>
+      </section>
 
-    </section>
+      <!-- TREINO -->
+      <section class="tab-content" id="tab-treino">
+        <div class="page-header">
+          <h2>🥋 Treino do Dia</h2>
+          <p>Exercícios selecionados especialmente para você</p>
+        </div>
+        <div class="treino-controls">
+          <button class="btn-primary" id="gerarTreinoBtn">⚡ Gerar Novo Treino</button>
+          <div class="progress-wrap">
+            <span class="progress-label">Progresso: <strong id="progressLabel">0/0</strong></span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="treino-grid" id="treinoGrid">
+          <div class="empty-state"><span>💪</span><p>Clique em "Gerar Novo Treino" para começar!</p></div>
+        </div>
+      </section>
 
-  </main>
+    </main>
+  </div>
 
-  <!-- ======================== ONBOARDING ======================== -->
-  <div class="onboarding-overlay" id="onboardingOverlay">
+  <!-- ONBOARDING -->
+  <div class="onboarding-overlay hidden" id="onboardingOverlay">
     <div class="onboarding-card" id="onboardingCard">
-
-      <!-- Passo 1 -->
       <div class="ob-step active" id="ob-step-1">
         <div class="ob-kanji">始</div>
         <h2 class="ob-title">Bem-vinda ao<br><span>Calistenia Asiática</span> 🌸</h2>
         <p class="ob-sub">Antes de começar, precisamos te conhecer melhor.<br>Vai levar menos de 1 minuto!</p>
         <button class="btn-primary ob-btn" id="obStartBtn">Vamos lá →</button>
       </div>
-
-      <!-- Passo 2 -->
       <div class="ob-step" id="ob-step-2">
         <div class="ob-icon">👤</div>
         <h2 class="ob-title">Qual é o seu nome?</h2>
@@ -226,8 +213,6 @@
         </div>
         <button class="btn-primary ob-btn" id="obNomeBtn">Continuar →</button>
       </div>
-
-      <!-- Passo 3 -->
       <div class="ob-step" id="ob-step-3">
         <div class="ob-icon">🎂</div>
         <h2 class="ob-title">Quantos anos você tem?</h2>
@@ -237,16 +222,12 @@
         </div>
         <button class="btn-primary ob-btn" id="obIdadeBtn">Continuar →</button>
       </div>
-
-      <!-- Passo 4 -->
       <div class="ob-step" id="ob-step-4">
         <div class="ob-kanji" style="color:var(--pink)">🌸</div>
         <h2 class="ob-title">Tudo pronto,<br><span id="obNomeFinal">Guerreira</span>!</h2>
         <p class="ob-sub">Sua jornada na calistenia começa agora.<br>Vamos juntas alcançar seus objetivos!</p>
         <button class="btn-primary ob-btn" id="obFinishBtn">Entrar no App ✨</button>
       </div>
-
-      <!-- Dots -->
       <div class="ob-progress">
         <div class="ob-dot active" id="dot-1"></div>
         <div class="ob-dot" id="dot-2"></div>
@@ -259,6 +240,6 @@
   <!-- TOAST -->
   <div class="toast" id="toast"></div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
